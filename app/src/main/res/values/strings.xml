@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Minimalist eCommerce App</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="profile">Profile</string>
+    <string name="buy_now">BUY NOW</string>
+    <string name="tree_in_ceramic">Tree in ceramic</string>
+</resources>
