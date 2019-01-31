@@ -1,5 +1,6 @@
 package io.htueko.minimalistecommerceapp
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,14 +14,20 @@ class ShopAdapter(var itemList: ArrayList<ShopItem>) : RecyclerView.Adapter<Shop
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.card_item, parent, false)
-        return MyViewHolder(view)
+        val holder = MyViewHolder(view)
+        view.setOnClickListener {
+            val intent = Intent(parent.context, ItemDetailActivity::class.java)
+            intent.putExtra("title", itemList[holder.adapterPosition].title)
+            parent.context.startActivity(intent)
+        }
+        return holder
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val itemLists = itemList[position]
         holder.title.text = itemLists.title
         holder.price.text = itemLists.price.toString()
-        Picasso.get().load(itemLists.image).resize(50, 50).centerCrop().into(holder.photo)
+        Picasso.get().load(itemLists.image).into(holder.photo)
     }
 
     override fun getItemCount(): Int {

@@ -8,6 +8,19 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!--custom style for spinner-->
+    <style name="SpinnerStyle">
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!--custom style for button at detail activity-->
+    <style name="BuyNowButtonDetailStyle">
+        <item name="android:background">@color/buttonBackground</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+    </style>
+
     <!--custom style for buy now button-->
     <style name="BuyNowButtonStyle" parent="Widget.MaterialComponents.Button.TextButton">
         <item name="android:textColor">@color/primaryTextColor</item>

@@ -9,5 +9,6 @@
     <color name="primaryTextColor">#393C3F</color>
     <color name="secondaryTextColor">#9FA2A5</color>
     <color name="accentTextColor">#3592FD</color>
+    <color name="buttonBackground">#EFEFEF</color>
 
 </resources>

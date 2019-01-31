@@ -5,4 +5,16 @@
     <string name="profile">Profile</string>
     <string name="buy_now">BUY NOW</string>
     <string name="tree_in_ceramic">Tree in ceramic</string>
+    <string name="product_detail">Product Detail</string>
+    <string name="shopping_bag">Shopping Bag</string>
+
+    <string-array name="categories">
+        <item>Flowers</item>
+        <item>Books</item>
+        <item>Computers</item>
+        <item>Smart phones</item>
+        <item>Hoody</item>
+        <item>Jeans</item>
+    </string-array>
+
 </resources>
