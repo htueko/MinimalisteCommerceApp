@@ -10,14 +10,20 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import java.util.zip.Inflater
 
-class ShopAdapter(var itemList: ArrayList<ShopItem>) : RecyclerView.Adapter<ShopAdapter.MyViewHolder>() {
+class ShopAdapter(private var itemList: ArrayList<ShopItem>) : RecyclerView.Adapter<ShopAdapter.MyViewHolder>() {
+
+    companion object {
+        const val TITLE = "title"
+        const val PRICE = "price"
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.card_item, parent, false)
         val holder = MyViewHolder(view)
         view.setOnClickListener {
             val intent = Intent(parent.context, ItemDetailActivity::class.java)
-            intent.putExtra("title", itemList[holder.adapterPosition].title)
+            intent.putExtra(TITLE, itemList[holder.adapterPosition].title)
+            intent.putExtra(PRICE, itemList[holder.adapterPosition].price)
             parent.context.startActivity(intent)
         }
         return holder

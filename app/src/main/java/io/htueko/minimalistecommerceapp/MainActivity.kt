@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -21,17 +22,19 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
             setHomeAsUpIndicator(R.drawable.ic_apps)
+            setDisplayShowTitleEnabled(false)
         }
 
         val items = arrayListOf<ShopItem>()
         for (i in 0..11) {
-            items.add(ShopItem("Plotted plant", "Plotted plant", 19.99))
+            items.add(ShopItem("Plotted plant", "Plotted plant $i", 19.99))
         }
 
-       recycler_view_main.apply {
-           layoutManager = GridLayoutManager(this@MainActivity, 2)
-           adapter = ShopAdapter(items)
-       }
+        recycler_view_main.apply {
+            layoutManager = GridLayoutManager(this@MainActivity, 2)
+            adapter = ShopAdapter(items)
+        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -40,8 +43,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when(item?.itemId){
+        when (item?.itemId) {
             R.id.shopping_bag_menu_main -> Toast.makeText(this, "Shopping bag is pressed", Toast.LENGTH_SHORT).show()
+
         }
         return super.onOptionsItemSelected(item)
     }

@@ -9,7 +9,7 @@
     </style>
 
     <!--custom style for spinner-->
-    <style name="SpinnerStyle">
+    <style name="SpinnerStyle" parent="">
         <item name="android:textColor">@color/primaryTextColor</item>
         <item name="android:textSize">18sp</item>
     </style>
