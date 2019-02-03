@@ -22,10 +22,11 @@
 
             <TextView
                 android:id="@+id/txt_toolbar_title_detail"
-                style="@style/TitleTextStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/product_detail"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -50,12 +51,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+
         android:id="@+id/txt_title_detail"
-        style="@style/TitleTextStyle"
-        android:layout_width="wrap_content"
+        style="@style/DetailTitleTextStyle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="32dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/txt_description_detail"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,29 +65,28 @@
 
     <TextView
         android:id="@+id/txt_description_detail"
-        android:layout_width="wrap_content"
+        style="@style/DetailDescriptionTextStyle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="32dp"
         android:layout_marginBottom="8dp"
+        android:text="testing"
         app:layout_constraintBottom_toTopOf="@+id/txt_price_detail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:text="@tools:sample/first_names" />
+        app:layout_constraintStart_toStartOf="parent" />
+
 
     <TextView
-        android:text="testing"
-        android:textSize="34sp"
         android:id="@+id/txt_price_detail"
-        android:textColor="@android:color/black"
-        android:layout_width="wrap_content"
+        style="@style/DetailPriceTagStyle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="32dp"
         android:layout_marginBottom="16dp"
+        android:text="testing"
         app:layout_constraintBottom_toTopOf="@+id/btn_buy_detail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <com.google.android.material.button.MaterialButton
@@ -96,16 +96,16 @@
         android:layout_height="72dp"
         android:layout_marginStart="32dp"
         android:layout_marginBottom="64dp"
-        android:text="@string/buy_now"
-        app:backgroundTint="@color/buttonBackground"
         android:elevation="4dp"
+        android:text="@string/buy_now"
+        android:textAlignment="viewStart"
+        app:backgroundTint="@color/buttonBackground"
         app:cornerRadius="0dp"
         app:icon="@drawable/ic_shopping_cart"
         app:iconTint="@color/primaryTextColor"
-        app:rippleColor="@color/accentTextColor"
-        android:textAlignment="viewStart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="@color/accentTextColor" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

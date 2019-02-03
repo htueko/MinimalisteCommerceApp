@@ -32,7 +32,7 @@ class ShopAdapter(private var itemList: ArrayList<ShopItem>) : RecyclerView.Adap
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val itemLists = itemList[position]
         holder.title.text = itemLists.title
-        holder.price.text = itemLists.price.toString()
+        holder.price.text = itemLists.price
         Picasso.get().load(itemLists.image).into(holder.photo)
     }
 

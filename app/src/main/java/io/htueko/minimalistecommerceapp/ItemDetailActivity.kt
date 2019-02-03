@@ -22,6 +22,7 @@ class ItemDetailActivity : AppCompatActivity() {
 
         txt_toolbar_title_detail.text = title
         txt_title_detail.text = title
+        txt_description_detail.text = title
         txt_price_detail.text = price
 
         toolbar_detail.setNavigationOnClickListener { finish() }

@@ -1,10 +1,12 @@
 package io.htueko.minimalistecommerceapp
 
+import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -27,12 +29,36 @@ class MainActivity : AppCompatActivity() {
 
         val items = arrayListOf<ShopItem>()
         for (i in 0..11) {
-            items.add(ShopItem("Plotted plant", "Plotted plant $i", 19.99))
+            items.add(ShopItem("Plotted plant", "Plotted plant $i", "$19.09"))
         }
 
         recycler_view_main.apply {
             layoutManager = GridLayoutManager(this@MainActivity, 2)
             adapter = ShopAdapter(items)
+        }
+
+        bottomNavigation_main.setOnNavigationItemReselectedListener {
+            when (it.itemId) {
+                R.id.bottom_nav_menu_search -> {
+                    val builder = AlertDialog.Builder(this)
+                    builder.setTitle("Search")
+                        .setMessage("Here goes the search")
+                        .setIcon(R.drawable.ic_search)
+                        .setPositiveButton("Ok") { dialog, which ->
+                            dialog.cancel()
+                        }.show()
+                }
+                R.id.bottom_nav_menu_profile -> {
+                    val builder = AlertDialog.Builder(this)
+                    builder.setTitle("Profile")
+                        .setMessage("let the user to sign up or sign in")
+                        .setIcon(R.drawable.ic_profile)
+                        .setPositiveButton("Enter") { dialog, which ->
+                            dialog.cancel()
+                        }.show()
+                }
+
+            }
         }
 
     }

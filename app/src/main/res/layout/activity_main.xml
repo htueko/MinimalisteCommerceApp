@@ -58,6 +58,7 @@
         android:id="@+id/bottomNavigation_main"
         app:itemBackground="@color/buttonBackground"
         android:textAlignment="viewStart"
+        style="@style/BottomNavStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
